@@ -89,3 +89,4 @@ C:\Users\dmp5658\Desktop\Projects\FitnessTrack\FitnessTrackAPI\FitnessTrackAPI\o
 C:\Users\dmp5658\Desktop\Projects\FitnessTrack\FitnessTrackAPI\FitnessTrackAPI\obj\Debug\FitnessTrackAPI.pdb
 C:\Users\dmp5658\Desktop\Projects\FitnessTrack\FitnessTrackAPI\FitnessTrackAPI\obj\Debug\FitnessTrackAPI.Migrations.Initial.resources
 C:\Users\dmp5658\Desktop\Projects\FitnessTrack\FitnessTrackAPI\FitnessTrackAPI\obj\Debug\FitnessTrackAPI.csproj.GenerateResource.cache
+C:\Users\dmp5658\Desktop\Projects\FitnessTrack\FitnessTrackAPI\FitnessTrackAPI\obj\Debug\FitnessTrackAPI.csprojAssemblyReference.cache
