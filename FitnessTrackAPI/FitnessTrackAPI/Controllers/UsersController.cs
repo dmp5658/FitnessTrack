@@ -10,6 +10,7 @@ namespace FitnessTrackAPI.Controllers
 {
     public class UsersController : ApiController
     {
+        [HttpGet]
         public IHttpActionResult GetUsers()
         {
             try
@@ -26,5 +27,7 @@ namespace FitnessTrackAPI.Controllers
             }
            
         }
+
+
     }
 }

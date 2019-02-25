@@ -10,19 +10,22 @@ import { IndexComponent } from './index/index.component';
 // Services
 import {AppRouterModule} from './app-router.module';
 
+
 // Material Design
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatListModule, MatSelectModule, MatSortModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 // Forms
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -36,10 +39,11 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRouterModule,
+    AppRouterModule, HttpClientModule,
     // Material
     BrowserAnimationsModule, MatSortModule, MatButtonModule, MatTableModule, MatListModule,
-    ReactiveFormsModule, FormsModule, MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule, MatDialogModule
+    ReactiveFormsModule, FormsModule, MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule, MatDialogModule,
+    MatNativeDateModule, MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

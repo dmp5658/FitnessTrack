@@ -6,6 +6,20 @@
     </mat-form-field>
     <br>
     <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose DOB" formControlName="DOB">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
       <input matInput placeholder="Password" type="password" formControlName="password">
     </mat-form-field>
     <mat-form-field>
