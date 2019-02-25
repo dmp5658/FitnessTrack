@@ -19,7 +19,36 @@ namespace FitnessTrackAPI.Controllers
     [RoutePrefix("auth")]
     public class AuthController : ApiController
     {
+        [Route("login")]
+        [HttpPost]
+        public IHttpActionResult Login([FromBody]User user)
+        {
+            if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password))
+                return BadRequest("Enter your username and password");
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var exists = context.Users.Any(n => n.UserName == user.UserName);
 
+                    if (exists)
+                    {
+                        var passone = context.Users.Where(p => p.UserName == user.UserName).SingleOrDefault();
+                        if (BCrypt.Net.BCrypt.Verify(user.Password, passone.Password))
+                        {
+                            return Ok(CreateToken(user));
+                        }
+                    }
+
+                    return BadRequest("Wrong credentials");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [Route("register")]
         [HttpPost]
