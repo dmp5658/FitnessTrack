@@ -5,12 +5,15 @@ import {NgModule} from '@angular/core';
 import {IndexComponent} from './index/index.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
-
+import {AddLiftinfoComponent} from './add-liftinfo/add-liftinfo.component';
+import {AddWeightinfoComponent} from './add-weightinfo/add-weightinfo.component';
 // route
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'liftinfo', component: AddLiftinfoComponent},
+  {path: 'weightinfo', component: AddWeightinfoComponent}
 ];
 
 @NgModule({

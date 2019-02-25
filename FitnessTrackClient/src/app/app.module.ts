@@ -26,6 +26,10 @@ import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { WeightinfoComponent } from './weightinfo/weightinfo.component';
+import { LiftinfoComponent } from './liftinfo/liftinfo.component';
+import { AddWeightinfoComponent } from './add-weightinfo/add-weightinfo.component';
+import { AddLiftinfoComponent } from './add-liftinfo/add-liftinfo.component';
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import {HttpClientModule} from '@angular/common/http';
     FooterComponent,
     IndexComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    WeightinfoComponent,
+    LiftinfoComponent,
+    AddWeightinfoComponent,
+    AddLiftinfoComponent
   ],
   imports: [
     BrowserModule,
