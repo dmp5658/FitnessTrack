@@ -35,6 +35,8 @@ namespace FitnessTrackAPI.Models
         public DateTime DOB  { get; set; }
         public ICollection<WeightInfo> WeightInfos { get; set; }
         public ICollection<LiftInfo> LiftInfos { get; set; }
+        public ICollection<Target> Targets { get; set; }
+
 
 
 

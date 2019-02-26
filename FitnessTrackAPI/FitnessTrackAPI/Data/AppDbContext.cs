@@ -15,6 +15,8 @@ namespace FitnessTrackAPI.Data
         }
 
         public DbSet<User> Users { get; set; }
-
+        public DbSet<WeightInfo> WeightInfos { get; set; }
+        public DbSet<LiftInfo> LiftInfos { get; set; }
+        public DbSet<Target> Targets { get; set; }
     }
 }

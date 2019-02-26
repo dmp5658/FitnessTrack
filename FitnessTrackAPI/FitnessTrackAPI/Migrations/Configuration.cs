@@ -18,7 +18,6 @@ namespace FitnessTrackAPI.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            context.Users.Add(new Models.User() { UserName = "user", Password = "pass", FirstName = "First", LastName = "Last", DOB = new DateTime(1995, 12, 12) });
         }
     }
 }
