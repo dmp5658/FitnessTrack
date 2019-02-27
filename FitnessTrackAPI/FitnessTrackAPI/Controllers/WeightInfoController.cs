@@ -13,7 +13,28 @@ namespace FitnessTrackAPI.Controllers
     [EnableCors("http://localhost:4200", "*", "*")]
     public class WeightInfoController : ApiController
     {
-   
+        [HttpPost]
+        public IHttpActionResult PostWeightInfo([FromBody]WeightInfo weightinfo)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    context.WeightInfos.Add(weightinfo);
+                    context.SaveChanges();
+
+                    return Ok("Weight info was created!");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
+        }
 
     }
 }

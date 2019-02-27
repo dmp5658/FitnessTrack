@@ -11,10 +11,10 @@ using System.Web.Http.Cors;
 namespace FitnessTrackAPI.Controllers
 {
     [EnableCors("http://localhost:4200", "*", "*")]
-    public class LiftInfoController : ApiController
+    public class TargetController : ApiController
     {
         [HttpPost]
-        public IHttpActionResult PostLiftInfo([FromBody]LiftInfo liftinfo)
+        public IHttpActionResult PostTarget([FromBody]Target target)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -22,10 +22,10 @@ namespace FitnessTrackAPI.Controllers
             {
                 using (var context = new AppDbContext())
                 {
-                    context.LiftInfos.Add(liftinfo);
+                    context.Targets.Add(target);
                     context.SaveChanges();
 
-                    return Ok("Lift info was created!");
+                    return Ok("Target was created!");
                 }
             }
             catch (Exception ex)
@@ -35,5 +35,6 @@ namespace FitnessTrackAPI.Controllers
 
 
         }
+
     }
 }
