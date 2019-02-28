@@ -11,7 +11,7 @@ import {AuthService} from '../auth.service';
 export class AddLiftinfoComponent {
 
   constructor(private infoservice: InfoService,
-              public authservice: AuthService) { }
+              private authservice: AuthService) { }
   addliftForm = new FormGroup({
     currbench: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')]),
     currsquat: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')]),

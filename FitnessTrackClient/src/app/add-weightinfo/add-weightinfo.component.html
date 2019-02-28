@@ -1,3 +1,13 @@
 <p>
-  add-weightinfo works!
+  <mat-card>
+    <span>Create new Weight Entry</span>
+    <br>
+    <form [formGroup]="addweightForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="new-entry-field">
+        <input matInput placeholder="Current Weight" formControlName="currweight" >
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" [disabled]="addweightForm.invalid">Add Weight Information</button>
+    </form>
+  </mat-card>
 </p>
