@@ -37,5 +37,29 @@ namespace FitnessTrackAPI.Controllers
 
         }
 
+
+
+        [HttpGet]
+        public IHttpActionResult GetWeightInfo(int userID)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var weightinfos = context.WeightInfos.Where(p => p.UserID == userID).ToList();
+                    if (weightinfos == null) return NotFound();
+                    return Ok(weightinfos);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
+        }
+
     }
 }

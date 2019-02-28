@@ -36,5 +36,28 @@ namespace FitnessTrackAPI.Controllers
 
         }
 
+
+        [HttpGet]
+        public IHttpActionResult GetTargetInfo(int userID)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var targetinfos = context.Targets.Where(p => p.UserID == userID).ToList();
+                    if (targetinfos == null) return NotFound();
+                    return Ok(targetinfos);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
+        }
+
     }
 }
