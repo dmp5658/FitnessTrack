@@ -1,3 +1,30 @@
 <p>
-  add-target works!
+  <mat-card>
+    <span>Create new Target Entry</span>
+    <br>
+    <form [formGroup]="addtargetForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="new-entry-field">
+        <input matInput placeholder="Bench Target" formControlName="targbench" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Squat Target" formControlName="targsquat" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Curl Target" formControlName="targcurl" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Leg Press Target" formControlName="targlegpress" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Weight Target" formControlName="targweight" >
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" [disabled]="addtargetForm.invalid">Add Target Information</button>
+    </form>
+  </mat-card>
 </p>
+
