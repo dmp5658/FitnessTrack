@@ -18,6 +18,7 @@ import {
   MatTableModule,
   MatToolbarModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -25,11 +26,17 @@ import { LoginComponent } from './login/login.component';
 // Forms
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
+
+// HTTP
 import {HttpClientModule} from '@angular/common/http';
+
+
+// Components
 import { WeightinfoComponent } from './weightinfo/weightinfo.component';
 import { LiftinfoComponent } from './liftinfo/liftinfo.component';
 import { AddWeightinfoComponent } from './add-weightinfo/add-weightinfo.component';
 import { AddLiftinfoComponent } from './add-liftinfo/add-liftinfo.component';
+import { AddTargetComponent } from './add-target/add-target.component';
 
 
 @NgModule({
@@ -43,7 +50,8 @@ import { AddLiftinfoComponent } from './add-liftinfo/add-liftinfo.component';
     WeightinfoComponent,
     LiftinfoComponent,
     AddWeightinfoComponent,
-    AddLiftinfoComponent
+    AddLiftinfoComponent,
+    AddTargetComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,7 @@ import { AddLiftinfoComponent } from './add-liftinfo/add-liftinfo.component';
     // Material
     BrowserAnimationsModule, MatSortModule, MatButtonModule, MatTableModule, MatListModule,
     ReactiveFormsModule, FormsModule, MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule, MatDialogModule,
-    MatNativeDateModule, MatDatepickerModule,
+    MatNativeDateModule, MatDatepickerModule, MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

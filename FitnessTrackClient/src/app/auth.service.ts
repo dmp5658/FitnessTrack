@@ -20,10 +20,15 @@ export class AuthService {
   logout() {
     localStorage.removeItem('userName');
     localStorage.removeItem('token_value');
+    localStorage.removeItem('userID');
   }
 
   get getUserName() {
     return localStorage.getItem('userName');
+  }
+
+  get getUserId() {
+    return localStorage.getItem('UserID');
   }
 
   get isAuthenticated() {

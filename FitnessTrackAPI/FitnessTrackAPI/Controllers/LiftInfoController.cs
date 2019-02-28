@@ -22,6 +22,7 @@ namespace FitnessTrackAPI.Controllers
             {
                 using (var context = new AppDbContext())
                 {
+                    liftinfo.CurrDate = DateTime.Now;
                     context.LiftInfos.Add(liftinfo);
                     context.SaveChanges();
 

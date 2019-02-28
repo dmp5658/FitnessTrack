@@ -23,6 +23,7 @@ export class LoginComponent {
         console.log(data);
         localStorage.setItem('userName', data.UserName);
         localStorage.setItem('token_value', data.Token);
+        localStorage.setItem('UserID', data.UserID)
         this.router.navigate(['/']);
       },
       (error) => alert(error.error.Message)

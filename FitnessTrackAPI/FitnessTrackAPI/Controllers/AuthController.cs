@@ -36,6 +36,7 @@ namespace FitnessTrackAPI.Controllers
                         var passone = context.Users.Where(p => p.UserName == user.UserName).SingleOrDefault();
                         if (BCrypt.Net.BCrypt.Verify(user.Password, passone.Password))
                         {
+                            user.UserId = passone.UserId;
                             return Ok(CreateToken(user));
                         }
                     }
@@ -46,6 +47,7 @@ namespace FitnessTrackAPI.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -65,6 +67,9 @@ namespace FitnessTrackAPI.Controllers
                     context.Users.Add(user);
 
                     context.SaveChanges();
+
+                    var passone = context.Users.Where(p => p.UserName == user.UserName).SingleOrDefault();
+                    user.UserId = passone.UserId;
 
                     return Ok(CreateToken(user));
                 }
@@ -97,7 +102,8 @@ namespace FitnessTrackAPI.Controllers
             return new JwtPackage()
             {
                 UserName = user.UserName,
-                Token = tokenString
+                Token = tokenString,
+                UserID = user.UserId
             };
         }
 
@@ -110,4 +116,5 @@ public class JwtPackage
 {
     public string Token { get; set; }
     public string UserName { get; set; }
+    public int UserID { get; set; }
 }

@@ -31,7 +31,7 @@ export class RegisterComponent {
       console.log(data);
       localStorage.setItem('userName', data.UserName);
       localStorage.setItem('token_value', data.Token);
-
+      localStorage.setItem('UserID', data.UserID);
 
     });
   }

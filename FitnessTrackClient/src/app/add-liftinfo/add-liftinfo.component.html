@@ -1,3 +1,26 @@
 <p>
-  add-liftinfo works!
+  <mat-card>
+    <span>Create new Lift Entry</span>
+    <br>
+    <form [formGroup]="addliftForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="new-entry-field">
+        <input matInput placeholder="Current Bench Max" formControlName="currbench" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Current Squat Max" formControlName="currsquat" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Current Curl Max" formControlName="currcurl" >
+      </mat-form-field>
+      <br>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Current Leg Press" formControlName="currlegpress" >
+      </mat-form-field>
+      <br>
+      <button mat-raised-button [disabled]="addliftForm.invalid">Add Lift Information</button>
+    </form>
+  </mat-card>
 </p>
+
