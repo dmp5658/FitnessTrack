@@ -20,7 +20,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('userName');
     localStorage.removeItem('token_value');
-    localStorage.removeItem('userID');
+    localStorage.removeItem('UserID');
   }
 
   get getUserName() {

@@ -1,30 +1,34 @@
-<p>
-  <mat-card>
-    <span>Create new Target Entry</span>
-    <br>
-    <form [formGroup]="addtargetForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="new-entry-field">
-        <input matInput placeholder="Bench Target" formControlName="targbench" >
-      </mat-form-field>
+<div *ngIf="authservice.isAuthenticated; else elseBlock">
+  <p>
+    <mat-card>
+      <span>Create new Target Entry</span>
       <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Squat Target" formControlName="targsquat" >
-      </mat-form-field>
-      <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Curl Target" formControlName="targcurl" >
-      </mat-form-field>
-      <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Leg Press Target" formControlName="targlegpress" >
-      </mat-form-field>
-      <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Weight Target" formControlName="targweight" >
-      </mat-form-field>
-      <br>
-      <button mat-raised-button color="primary" [disabled]="addtargetForm.invalid">Add Target Information</button>
-    </form>
-  </mat-card>
-</p>
-
+      <form [formGroup]="addtargetForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="new-entry-field">
+          <input matInput placeholder="Bench Target" formControlName="targbench" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Squat Target" formControlName="targsquat" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Curl Target" formControlName="targcurl" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Leg Press Target" formControlName="targlegpress" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Weight Target" formControlName="targweight" >
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="addtargetForm.invalid">Add Target Information</button>
+      </form>
+    </mat-card>
+  </p>
+</div>
+<ng-template #elseBlock>
+  <p>Please Sign In</p>
+</ng-template>

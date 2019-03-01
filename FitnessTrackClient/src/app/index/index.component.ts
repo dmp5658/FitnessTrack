@@ -8,7 +8,7 @@ import {AuthService} from '../auth.service';
 })
 export class IndexComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private authservice: AuthService) { }
 
   ngOnInit() {
   }

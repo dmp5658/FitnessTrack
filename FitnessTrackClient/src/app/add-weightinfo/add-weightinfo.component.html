@@ -1,13 +1,18 @@
-<p>
-  <mat-card>
-    <span>Create new Weight Entry</span>
-    <br>
-    <form [formGroup]="addweightForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="new-entry-field">
-        <input matInput placeholder="Current Weight" formControlName="currweight" >
-      </mat-form-field>
+<div *ngIf="authservice.isAuthenticated; else elseBlock">
+  <p>
+    <mat-card>
+      <span>Create new Weight Entry</span>
       <br>
-      <button mat-raised-button color="primary" [disabled]="addweightForm.invalid">Add Weight Information</button>
-    </form>
-  </mat-card>
-</p>
+      <form [formGroup]="addweightForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="new-entry-field">
+          <input matInput placeholder="Current Weight" formControlName="currweight" >
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="addweightForm.invalid">Add Weight Information</button>
+      </form>
+    </mat-card>
+  </p>
+</div>
+<ng-template #elseBlock>
+  <p>Please Sign In</p>
+</ng-template>

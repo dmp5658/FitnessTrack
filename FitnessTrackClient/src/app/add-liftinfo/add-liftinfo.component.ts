@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {InfoService} from '../info.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-liftinfo',
@@ -11,7 +12,8 @@ import {AuthService} from '../auth.service';
 export class AddLiftinfoComponent {
 
   constructor(private infoservice: InfoService,
-              private authservice: AuthService) { }
+              private authservice: AuthService,
+              private router: Router) { }
   addliftForm = new FormGroup({
     currbench: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')]),
     currsquat: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')]),
@@ -30,7 +32,12 @@ export class AddLiftinfoComponent {
     console.log(this.addliftForm.value);
     this.infoservice.createLiftEntry(this.addliftForm.value).subscribe((data) =>
       console.log('Data - ', data));
+
+    this.router.navigate(['/']);
+
   }
+
+
 
 
 }

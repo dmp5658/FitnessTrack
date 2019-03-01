@@ -1,26 +1,30 @@
-<p>
-  <mat-card>
-    <span>Create new Lift Entry</span>
-    <br>
-    <form [formGroup]="addliftForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="new-entry-field">
-        <input matInput placeholder="Current Bench Max" formControlName="currbench" >
-      </mat-form-field>
+<div *ngIf="authservice.isAuthenticated; else elseBlock">
+  <p>
+    <mat-card>
+      <span>Create new Lift Entry</span>
       <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Current Squat Max" formControlName="currsquat" >
-      </mat-form-field>
-      <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Current Curl Max" formControlName="currcurl" >
-      </mat-form-field>
-      <br>
-      <mat-form-field class="new-entry-field" >
-        <input matInput placeholder="Current Leg Press" formControlName="currlegpress" >
-      </mat-form-field>
-      <br>
-      <button mat-raised-button color="primary" [disabled]="addliftForm.invalid">Add Lift Information</button>
-    </form>
-  </mat-card>
-</p>
-
+      <form [formGroup]="addliftForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="new-entry-field">
+          <input matInput placeholder="Current Bench Max" formControlName="currbench" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Current Squat Max" formControlName="currsquat" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Current Curl Max" formControlName="currcurl" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-entry-field" >
+          <input matInput placeholder="Current Leg Press" formControlName="currlegpress" >
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="addliftForm.invalid">Add Lift Information</button>
+      </form>
+    </mat-card>
+  </p>
+</div>
+<ng-template #elseBlock>
+  <p>Please Sign In</p>
+</ng-template>

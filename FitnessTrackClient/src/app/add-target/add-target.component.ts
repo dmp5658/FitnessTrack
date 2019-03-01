@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {InfoService} from '../info.service';
 import {AuthService} from '../auth.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-target',
@@ -11,7 +12,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class AddTargetComponent {
 
   constructor(private infoservice: InfoService,
-              private authservice: AuthService) { }
+              private authservice: AuthService,
+              private router: Router) { }
 
   addtargetForm = new FormGroup({
     targbench: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')]),
@@ -32,6 +34,9 @@ export class AddTargetComponent {
     console.log(this.addtargetForm.value);
     this.infoservice.createTargetEntry(this.addtargetForm.value).subscribe((data) =>
       console.log('Data - ', data));
+
+    this.router.navigate(['/']);
+
   }
 
 
